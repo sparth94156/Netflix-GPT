@@ -9,6 +9,8 @@
 - Login/Sign Up
     - Login/Signup Form (Will autoamatically redirects to the login page when routing to the browse page without Login/Sign Up)
     - redirect to the browse page
+    - Created a Sign-in/ Sign-up form from the same Sign-in component
+    - Form Validation
 
 - Browse (after authentication)
     - Header

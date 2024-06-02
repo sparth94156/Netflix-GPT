@@ -12,7 +12,7 @@ const Body = () => {
             path:'/',
             element: <Login/>,
             children: [{
-                path:'/browse',
+                path: '/browse',
                 element: <Browse/>
             },
             {
