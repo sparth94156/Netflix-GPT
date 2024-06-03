@@ -13,7 +13,7 @@ const Login = () => {
   const password = useRef(null)
 
   const toggleSigninForm = () => {
-
+    
     setIsSigninForm(!isSigninForm); // When the user clicks on sign up signinForm updates to false
   }
 
@@ -22,7 +22,7 @@ const Login = () => {
   // console.log(password)
 
   // We pass in the value inside reference object created by useRef hook
-    const isError = formValidation(userName.current.value, email.current.value, password.current.value)
+    const isError = formValidation(email.current.value, password.current.value)
 
   // the state updates to the returned object
     setIsValidate(isError)
@@ -52,9 +52,6 @@ const Login = () => {
                 placeholder='Username' 
                 />
               )
-            }
-            {
-              isValidate.userName && (<p className='text-red-500'>{isValidate.userName}</p>)
             }
             <input ref={email} 
             className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 place p-4 text-md rounded-md' 
@@ -91,8 +88,11 @@ const Login = () => {
             </div>
           )
           }
-          {isSigninForm ? (<span className='mt-5'>New to Netflix? <span className='cursor-pointer font-semibold mt-[20px] hover:underline' onClick={toggleSigninForm}> Sign up now.</span></span>)
-            : (<span className='mt-5'>Account already exists? <span className='cursor-pointer font-semibold mt-[20px] hover:underline' onClick={toggleSigninForm}> Sign in now.</span></span>)}
+          {isSigninForm ? 
+            (<span className='mt-5'>New to Netflix? <span className='cursor-pointer font-semibold mt-[20px] hover:underline' onClick={toggleSigninForm}> Sign up now.</span></span>)
+            : 
+            (<span className='mt-5'>Account already exists? <span className='cursor-pointer font-semibold mt-[20px] hover:underline' onClick={() => window.location.reload()}> Sign in now.</span></span>)
+            }
           <span className='my-6 text-sm text-gray-400'>This page is protected by Google reCAPTCHA to ensure you're not a bot. <span className='cursor-pointer text-blue-700 hover:underline'>Learn more</span>.</span>
         </div>
       </div>
