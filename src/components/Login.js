@@ -3,9 +3,9 @@ import Header from './Header'
 import { formValidation } from '../utils/validate'
 import { auth } from '../utils/firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 import { addUser } from '../utils/userSlice'
+import { useDispatch } from 'react-redux'
+import { USER_PROFILE } from './constants'
 
 const Login = () => {
   const [isSigninForm, setIsSigninForm] = useState(true) // Hooks should be at the top level of your functional components   
@@ -14,8 +14,7 @@ const Login = () => {
 
   const [loginError, setloginError] = useState(null)
 
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   // useRef hook is used to make a reference to the input field
   const userName = useRef(null)
@@ -57,7 +56,8 @@ const Login = () => {
           const user = userCredential.user;
           // Update profile 
           updateProfile(user, {
-            displayName: userName.current.value, photoURL: "https://avatars.githubusercontent.com/u/100994684?v=4"
+            displayName: userName.current.value, 
+            imageURL: USER_PROFILE
           })
             .then(() => {
               const { uid, email, displayName, imageURL } = auth.currentUser;
@@ -68,13 +68,11 @@ const Login = () => {
                 displayName: displayName,
                 imageURL: imageURL
               }))
-              navigate('/browse')
             })
             .catch((error) => {
               // An error occurred
               setloginError(error.message)
             });
-          console.log(user)
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -90,8 +88,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          navigate('/browse')
-          console.log(user)
         })
         .catch((error) => {
           const errorCode = error.code;

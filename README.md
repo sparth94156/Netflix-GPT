@@ -20,6 +20,10 @@
     - Implemented (onauthStateChanged) for authentication for Sign-in/Sign-up 
     - Dispatched the action for writing the store whenever we do Sign-in/Sign-up/Sign-out
     - Updates the user profile when Sign-in/Login
+    - Bug Fix - User Sign in displayName and imageProfile update
+    - Bug Fix - User not signed in then redirect from /Browse to /Login page and vice versa
+    - Unsubscribe onauthStateChanged when component unmounts
+    - Added hardcoded string and URLs into a single constant file
     - Fetch Movies from TMDB Api
 
 - Browse (after authentication)
