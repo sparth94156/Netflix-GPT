@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <div className=' w-full absolute py-3 px-8 bg-gradient-to-b from-black z-20 flex justify-between'>
-      <img className='w-[180px] cursor-pointer' src={LOGO} alt='logo' />
+      <img className='w-[180px] ml-5 cursor-pointer' src={LOGO} alt='logo' />
       {
       user && 
       <div className='flex gap-2 '>
