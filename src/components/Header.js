@@ -17,24 +17,24 @@ const Header = () => {
 
   const handleSignOut = () => {
     signOut(auth)
-    .then(() => {})
-    .catch((error) => {});
-  } 
+      .then(() => { })
+      .catch((error) => { });
+  }
 
-   // When the auth state changes in app, this api will be called (will be called once )
-   useEffect(() => {
+  // When the auth state changes in app, this api will be called (will be called once )
+  useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        const {uid, email, displayName, imageURL} = user;
-        dispatch(addUser({ 
-          id: uid, 
+        const { uid, email, displayName, imageURL } = user;
+        dispatch(addUser({
+          id: uid,
           email: email,
-          displayName: displayName, 
-          imageURL: imageURL
+          displayName: displayName,
+          imageURL: 'https://avatars.githubusercontent.com/u/100994684?v=4'
         }))
         navigate('/browse')
-      } 
+      }
       else {
         // User is signed out
         dispatch(removeUser())
@@ -43,21 +43,31 @@ const Header = () => {
     });
     // Cleanup (return a callback that unsubscribe auth when compoonent umnounts)
     return () => unsubscribe();
-  },[])
+  }, [])
 
   return (
-    <div className=' w-full absolute py-3 px-8 bg-gradient-to-b from-black z-20 flex justify-between'>
-      <img className='w-[180px] ml-5 cursor-pointer' src={LOGO} alt='logo' />
+    <div className=' w-full absolute py-1 px-8 bg-gradient-to-b from-black z-20 flex justify-between '>
+      <img className='w-[120px] ml-8 cursor-pointer' src={LOGO} alt='logo' />
       {
-      user && 
-      <div className='flex gap-2 '>
-        <img className='w-[40px] h-[40px] mt-8 cursor-pointer rounded-full' src={user?.imageURL}
-          alt='user-profile' />
-        <button className=' text-white font-semibold hover:underline'
-          onClick={handleSignOut}>
-          Sign Out
-        </button>
-      </div>
+        user &&
+        <div className='flex gap-x-[460px]'>
+          <div className='flex gap-x-3 text-gray-300 text-sm'>
+            <button className='font-semibold text-white'>Home</button>
+            <button>TV Shows</button>
+            <button>Movies</button>
+            <button>News & Popular</button>
+            <button>My List</button>
+            <button>Browse by language</button>
+          </div>
+          <div className='flex gap-2 text-white text-sm font-semibold'>
+            <img className='w-[30px] h-[30px] mt-5 cursor-pointer rounded-full' src={user?.imageURL}
+              alt='user-profile' />
+            <button className='hover:underline'
+              onClick={handleSignOut}>
+              Sign Out
+            </button>
+          </div>
+        </div>
       }
     </div>
   )

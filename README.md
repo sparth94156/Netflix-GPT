@@ -24,7 +24,15 @@
     - Bug Fix - User not signed in then redirect from /Browse to /Login page and vice versa
     - Unsubscribe onauthStateChanged when component unmounts
     - Added hardcoded string and URLs into a single constant file
-    - Fetch Movies from TMDB Api
+    - Sign up and register our app on TMDB website to access api key and api access token
+    - Created a slice for NowPlaying movies and store into our app store
+    - Created videoTitle component for trailer details
+    - Created videoBackground component for trailer running on the background
+    - Created a slice for movieTrailer and store it into our app
+    - Created custom hook for fetching the NowPlaying movies data
+    - Created custom hook for fetching the MovieTrailer video
+    - Making our custom hook dynamic for fetching the movie trailer dynamic by passing movieId from the NowPlaying store
+    - Embedded the video onto our app
 
 - Browse (after authentication)
     - Header

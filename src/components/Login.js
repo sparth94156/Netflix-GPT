@@ -117,14 +117,14 @@ const Login = () => {
             {
               !isSigninForm &&
               (<input ref={userName}
-                className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 place p-4 text-md rounded-md focus:border-cyan-400'
+                className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-4 text-md rounded-md outline-none'
                 type='text'
                 placeholder='Username'
               />
               )
             }
             <input ref={email}
-              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 place p-4 text-md rounded-md'
+              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-4 text-md rounded-md outline-none'
               type='text'
               placeholder='Email or mobile number'
             />
@@ -132,7 +132,7 @@ const Login = () => {
               isValidate.email && (<p className='text-red-500'>{isValidate.email}</p>)
             }
             <input ref={password}
-              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-4 text-md rounded-md'
+              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-4 text-md rounded-md outline-none'
               type='password'
               placeholder='Password' />
             {/* If the value is true then only it executes */}
@@ -149,9 +149,7 @@ const Login = () => {
           </form>
           {isSigninForm && (
             <div className='flex flex-col gap-y-3'>
-              <span className='text-center mt-[10px]'>OR</span>
-              <button className='bg-gray-500 bg-opacity-60 py-2  rounded-md text-lg hover:bg-opacity-50'>Use a sign-in code</button>
-              <span className='hover:underline hover:text-gray-300 text-center cursor-pointer '>Forgot Password?</span>
+              <span className='hover:underline hover:text-gray-300 text-center cursor-pointer mt-4'>Forgot Password?</span>
               <div className='flex'>
                 <input className='mr-2 border-none cursor-pointer' type='checkbox' /><span className='text-md'>Remember me</span><br />
               </div>
