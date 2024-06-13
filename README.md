@@ -33,6 +33,8 @@
     - Created custom hook for fetching the MovieTrailer video
     - Making our custom hook dynamic for fetching the movie trailer dynamic by passing movieId from the NowPlaying store
     - Embedded the video onto our app
+    - Added autoplay and mute to the trailer
+    - Styled with TailwindCSS to make the UI more appealing
 
 - Browse (after authentication)
     - Header
