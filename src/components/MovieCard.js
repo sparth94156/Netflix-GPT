@@ -1,13 +1,9 @@
-const MovieCard = (movieObj) => {
-
-    const {original_title, original_language, release_date} = movieObj;
-    console.log(original_title)
+import { IMG_CDN_URL } from "./constants";
+const MovieCard = ({ posterPath }) => {
     
     return (
-        <div className="border border-gray-500">
-            <h2>{original_title}</h2>
-            <p>{original_language}</p>
-            <p>{release_date}</p>
+        <div className="w-[120px] cursor-pointer">
+            <img className="w-[100%]" src={IMG_CDN_URL + posterPath} alt="Movie poster"/>
         </div>
     )
 }

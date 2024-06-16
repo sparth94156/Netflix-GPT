@@ -1,9 +1,9 @@
-import SuggestionContainer from "./SuggestionContainer"
+import SuggestionContainer from './SuggestionContainer'
 import TrailerContainer from "./TrailerContainer"
 
 const MainContainer = () => {
     return (
-        <div className="">
+        <div className=''>  
             <TrailerContainer/>
             <SuggestionContainer/>
         </div>

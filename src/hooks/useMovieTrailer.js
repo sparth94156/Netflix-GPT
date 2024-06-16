@@ -13,17 +13,13 @@ const useMovieTrailer = (movieId) => {
 
         const data = await fetch('https://api.themoviedb.org/3/movie/'+ movieId +'/videos?language=en-US', API_OPTION)
         const json = await data.json()
-        console.log(json.results)
-    
     
         // We will filter out the videos of type 'Trailer'
         const filterData = json.results.filter(video => video.type === "Trailer")
-    
-        console.log(filterData)
-    
+        
         // Handling the condition of more than 1 trailer or having no trailer 
         const filteredTrailer = filterData.length ? filterData[0] : json?.results[0];
-    
+
         dispatch(addTrailer(filteredTrailer))
     }
     

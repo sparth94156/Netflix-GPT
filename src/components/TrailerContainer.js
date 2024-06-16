@@ -8,10 +8,10 @@ const TrailerContainer = () => {
 
     if(!movieStore) return ;
 
-    const {original_title, overview, id} = movieStore[8];
+    const {original_title, overview, id} = movieStore[2];
 
     return (
-        <div className="">
+        <div className="w-screen">
             <Videotitle title={original_title} overview={overview}/>
             <VideoBackground movieId={id}/>
         </div>

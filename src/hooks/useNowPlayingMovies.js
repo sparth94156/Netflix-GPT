@@ -14,7 +14,6 @@ const useNowPlayingMovies = () => {
 
         dispatch(addMovie(json.results))
 
-        // console.log(json.results)
     }
 
     useEffect(() => {

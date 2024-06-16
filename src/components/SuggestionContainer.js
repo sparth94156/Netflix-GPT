@@ -1,29 +1,26 @@
 import { useSelector } from "react-redux";
-import MovieCard from "./MovieCard";
+import MovieCategory from "./MovieCategory";
 
 const SuggestionContainer = () => {
 
-    const movieList = useSelector(store => store.movies.nowPlayingMovies)
+    // reading the nowplayingmovies from the store
+    const movieList = useSelector(store => store.movies)
 
-    if(!movieList) return ;
-
-    console.log(movieList)
+    //  if(!movieList) return ;
 
     return (
-        <div>
-            <h2>Now Playing</h2>
-            <div className="border border-gray-700">
-                {
-                    movieList.map((movie) => (
-                        <div id={movie.id}>
-                            <MovieCard movieObj = {movie}/>
-                        </div>
-                    )
-                )
-                }
+        <div className="bg-black">
+            <div className="mx-8 py-2 -mt-[140px] z-40 relative bg-transparent">
+                <MovieCategory title={'Now Playing'} movies={movieList.nowPLayingMovies} />
+                <MovieCategory title={'Top Rated'} movies={movieList.nowTopRatedMovies} />
+                <MovieCategory title={'Popular'} movies={movieList.nowPopularMovies} />
+                <MovieCategory title={'Upcoming'} movies={movieList.nowUpcomingMovies} />
             </div>
         </div>
     )
 }
 
 export default SuggestionContainer;
+
+
+
