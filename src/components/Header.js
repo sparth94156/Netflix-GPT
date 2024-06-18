@@ -8,18 +8,23 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { useDispatch } from 'react-redux'
 import { addUser, removeUser } from '../utils/userSlice'
 import { LOGO } from './constants'
+import { toggleGptSearch } from '../utils/gptSlice'
+import { languageConstant } from './constants'
+import { selectLanguage } from '../utils/configSlice'
 
 const Header = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const user = useSelector(store => store.user) // subscribe to the store (accesing the user reducer fn)
+  const gptShowSearch = useSelector(store => store.gpt.gptSearchShow)
 
   const handleSignOut = () => {
     signOut(auth)
       .then(() => { })
       .catch((error) => { });
   }
+
 
   // When the auth state changes in app, this api will be called (will be called once )
   useEffect(() => {
@@ -45,24 +50,42 @@ const Header = () => {
     return () => unsubscribe();
   }, [])
 
+  const handleGptSearch = () => {
+
+    dispatch(toggleGptSearch())
+  }
+
+  const handleLangChange = (e) => {
+
+    dispatch(selectLanguage(e.target.value))
+  }
+
   return (
     <div className=' w-full absolute py-1 px-8 bg-gradient-to-b from-black z-20 flex justify-between '>
       <img className='w-[120px] ml-8 cursor-pointer' src={LOGO} alt='logo' />
       {
         user &&
-        <div className='flex gap-x-[460px]'>
-          <div className='flex gap-x-3 text-gray-300 text-sm'>
-            <button className='font-semibold text-white'>Home</button>
-            <button className='hover:text-white'>TV Shows</button>
-            <button className='hover:text-white'>Movies</button>
-            <button className='hover:text-white'>News & Popular</button>
-            <button className='hover:text-white'>My List</button>
-            <button className='hover:text-white'>Browse by language</button>
-          </div>
-          <div className='flex gap-2 text-white text-sm font-semibold'>
+        <div className='flex'>
+          <div className='flex gap-3 text-white text-sm font-semibold'>
+            {
+              gptShowSearch &&
+              <select className='bg-slate-900 text-white my-4 p-2 rounded-md outline-none' onChange={handleLangChange}>
+                {
+                  languageConstant.map(lang => <option key={lang.identifier} value={lang.identifier}>
+                    {lang.langkey}
+                  </option>)
+                }
+              </select>
+            }
+            <div className='flex gap-x-3 text-gray-300 text-sm'>
+              <button className='hover:text-white font-semibold'
+                onClick={handleGptSearch}>
+                {gptShowSearch ? 'Homepage' : 'GPT Search'}
+              </button>
+            </div>
             <img className='w-[30px] h-[30px] mt-5 cursor-pointer rounded-full' src={user?.imageURL}
               alt='user-profile' />
-            <button className='hover:text-slate-200'
+            <button className='hover:text-slate-200 text-nowrap'
               onClick={handleSignOut}>
               Sign Out
             </button>

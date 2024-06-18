@@ -35,6 +35,14 @@
     - Embedded the video onto our app
     - Added autoplay and mute to the trailer
     - Styled with TailwindCSS to make the UI more appealing
+    - Added MovieList in our SuggestionContainer
+    - Created custom hooks for fetching the movie lists
+    - Fetch TMDP Image CDN link to get the movie poster
+    - Styled our SuggestionContainer and Browse Page 
+    - Build GPT Search Page
+    - Created GPT searchBar
+    - Build Multiple Language feature for GPT search Page using redux store
+    - Toggle the GPT Search Button (Homepage if gptsearch state is true)
 
 - Browse (after authentication)
     - Header

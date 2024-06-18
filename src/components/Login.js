@@ -5,7 +5,8 @@ import { auth } from '../utils/firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { addUser } from '../utils/userSlice'
 import { useDispatch } from 'react-redux'
-import { USER_PROFILE } from './constants'
+import { USER_PROFILE, LOGIN_IMG_URL } from './constants'
+
 
 const Login = () => {
   const [isSigninForm, setIsSigninForm] = useState(true) // Hooks should be at the top level of your functional components   
@@ -102,7 +103,7 @@ const Login = () => {
     <div className='bg-black max-h-full'>
       <Header />
       <div className='absolute'>
-        <img src='https://assets.nflxext.com/ffe/siteui/vlv3/dd4dfce3-1a39-4b1a-8e19-b7242da17e68/86742114-c001-4800-a127-c9c89ca7bbe4/IN-en-20240527-popsignuptwoweeks-perspective_alpha_website_large.jpg'
+        <img src={LOGIN_IMG_URL}
           alt='background' />
       </div>
       <div className='absolute w-full text-white top-20 '>
@@ -112,7 +113,7 @@ const Login = () => {
               (e) => e.preventDefault()
             }>
             <h2 className='text-3xl font-bold mb-2'>
-              {isSigninForm ? 'Sign In' : 'Sign Up'}
+              {isSigninForm ? 'Sign In' : 'Sign Up' }
             </h2>
             {
               !isSigninForm &&
