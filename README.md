@@ -41,8 +41,14 @@
     - Styled our SuggestionContainer and Browse Page 
     - Build GPT Search Page
     - Created GPT searchBar
-    - Build Multiple Language feature for GPT search Page using redux store
+    - (BONUS) Build Multiple-Language feature for GPT search Page using redux store
     - Toggle the GPT Search Button (Homepage if gptsearch state is true)
+    - Registered and create the API key for using GPT API.
+    - Integrated the GPT API in our app for Movie Recommendation.
+    - Installed OpenAI package for initializing and authentication.
+    - Store the movie recommedation and movie Results into our store.
+    - Created Movie Suggestion Page for showing list of recommended movies by GPT.
+    - Reused the MovieCategory component in the MovieSuggestion component for showing the movie result of searched query. 
 
 - Browse (after authentication)
     - Header

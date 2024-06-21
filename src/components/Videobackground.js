@@ -16,7 +16,6 @@ const VideoBackground = ({ movieId }) => {
             <iframe  className="w-screen h-screen pointer-events-none"
             src={"https://www.youtube.com/embed/" + getTrailer?.key + '?autoplay=1&mute=1&showinfo=0&controls=0&rel=0' }
             title="YouTube video player" 
-            loop="true"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin">
             </iframe>

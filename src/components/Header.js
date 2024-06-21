@@ -8,7 +8,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { useDispatch } from 'react-redux'
 import { addUser, removeUser } from '../utils/userSlice'
 import { LOGO } from './constants'
-import { toggleGptSearch } from '../utils/gptSlice'
+import { clearGptMovies, toggleGptSearch } from '../utils/gptSlice'
 import { languageConstant } from './constants'
 import { selectLanguage } from '../utils/configSlice'
 
@@ -52,7 +52,9 @@ const Header = () => {
 
   const handleGptSearch = () => {
 
-    dispatch(toggleGptSearch())
+    dispatch(toggleGptSearch()) 
+
+    if(gptShowSearch) return dispatch(clearGptMovies())
   }
 
   const handleLangChange = (e) => {
