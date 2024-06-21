@@ -7,7 +7,7 @@ export const API_OPTION =  {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer ' + REACT_APP_TMDB_KEY
+      Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY
     }
   };
 
@@ -21,4 +21,4 @@ export const languageConstant = [
   {identifier: 'spanish', langkey: 'Spanish'},
 ]
   
-export const OPENAI_KEY = REACT_APP_OPENAI_KEY
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY
