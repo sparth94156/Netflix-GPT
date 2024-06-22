@@ -20,5 +20,5 @@ export const languageConstant = [
   {identifier: 'hindi', langkey: 'Hindi'},
   {identifier: 'spanish', langkey: 'Spanish'},
 ]
-  
+
 export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY

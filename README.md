@@ -49,6 +49,8 @@
     - Store the movie recommedation and movie Results into our store.
     - Created Movie Suggestion Page for showing list of recommended movies by GPT.
     - Reused the MovieCategory component in the MovieSuggestion component for showing the movie result of searched query. 
+    - Implement Memoization in our app
+    - Added .env file and put it in .gitignore to secure my secret API keys
 
 - Browse (after authentication)
     - Header

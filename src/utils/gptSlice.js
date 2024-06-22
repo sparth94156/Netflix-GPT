@@ -6,6 +6,7 @@ const GptSlice = createSlice({
         gptSearchShow: false,
         gptMovies: null,
         gptResults: null,
+        clientApi: null,
     },
     reducers: {
         toggleGptSearch: (state) => {
@@ -19,10 +20,13 @@ const GptSlice = createSlice({
         clearGptMovies: (state,action) => {
             state.gptResults = null
             state.gptMovies = null
+        },
+        addUserApi: (state,action) => {
+            state.clientApi = action.payload
         }
     }
 })
 
-export const {toggleGptSearch, addGptMovies, clearGptMovies} = GptSlice.actions;
+export const {toggleGptSearch, addGptMovies, clearGptMovies, addUserApi} = GptSlice.actions;
 
 export default GptSlice.reducer;
