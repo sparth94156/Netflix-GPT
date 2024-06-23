@@ -31,7 +31,7 @@ const Header = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        const { uid, email, displayName, imageURL } = user;
+        const { uid, email, displayName } = user;
         dispatch(addUser({
           id: uid,
           email: email,
@@ -63,15 +63,15 @@ const Header = () => {
   }
 
   return (
-    <div className=' w-full absolute py-1 px-8 bg-gradient-to-b from-black z-20 flex justify-between '>
-      <img className='w-[120px] ml-8 cursor-pointer' src={LOGO} alt='logo' />
+    <div className=' w-full absolute py-1 px-8 bg-gradient-to-b from-black z-20 md:flex md:justify-between '>
+      <img className='w-[120px] mx-auto md:ml-8 cursor-pointer' src={LOGO} alt='logo' />
       {
         user &&
-        <div className='flex'>
-          <div className='flex gap-3 text-white text-sm font-semibold'>
+        <div className='md:flex'>
+          <div className='flex justify-between md:flex md:gap-3 text-white text-sm font-semibold'>
             {
               gptShowSearch &&
-              <select className='bg-slate-900 text-white my-4 p-2 rounded-md outline-none' onChange={handleLangChange}>
+              <select className='bg-slate-900 text-white my-1 md:my-4 p-2 rounded-md outline-none' onChange={handleLangChange}>
                 {
                   languageConstant.map(lang => <option key={lang.identifier} value={lang.identifier}>
                     {lang.langkey}
@@ -80,14 +80,14 @@ const Header = () => {
               </select>
             }
             <div className='flex gap-x-3 text-gray-300 text-sm'>
-              <button className='hover:text-white font-semibold'
+              <button className='hover:text-white font-semibold bg-gray-500 md:bg-inherit p-2 rounded-md md:rounded-none md:p-0 mr-4 md:m-0'
                 onClick={handleGptSearch}>
                 {gptShowSearch ? 'Homepage' : 'GPT Search'}
               </button>
             </div>
-            <img className='w-[30px] h-[30px] mt-5 cursor-pointer rounded-full' src={user?.imageURL}
+            <img className='w-[30px] hidden md:block h-[30px] mt-5 cursor-pointer rounded-full' src={user?.imageURL}
               alt='user-profile' />
-            <button className='hover:text-slate-200 text-nowrap'
+            <button className='hover:text-white text-gray-200 text-nowrap bg-gray-500 md:bg-inherit p-2 rounded-md md:rounded-none md:p-0 '
               onClick={handleSignOut}>
               Sign Out
             </button>

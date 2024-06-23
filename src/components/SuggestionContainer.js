@@ -10,7 +10,7 @@ const SuggestionContainer = () => {
 
     return (
         <div className="bg-black">
-            <div className="mx-8 py-2 -mt-[140px] z-40 relative bg-transparent">
+            <div className="mx-8 py-2 md:-mt-[140px] z-40 relative bg-transparent">
                 <MovieCategory title={'Now Playing'} movies={movieList.nowPLayingMovies} />
                 <MovieCategory title={'Top Rated'} movies={movieList.nowTopRatedMovies} />
                 <MovieCategory title={'Popular'} movies={movieList.nowPopularMovies} />

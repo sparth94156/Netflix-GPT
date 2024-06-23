@@ -100,32 +100,33 @@ const Login = () => {
   }
 
   return (
-    <div className='bg-black max-h-full'>
+    <div className='bg-black h-full'>
       <Header />
-      <div className='absolute'>
+      <div className='md:fixed'>
         <img src={LOGIN_IMG_URL}
+        className='h-screen object-cover md:h-full'
           alt='background' />
       </div>
-      <div className='absolute w-full text-white top-20 '>
-        <div className='w-4/12  bg-black bg-opacity-80 mx-auto flex flex-col py-10 px-10 rounded-md '>
+      <div className='absolute w-full text-white top-24 md:top-20 '>
+        <div className='w-[400px]  bg-black bg-opacity-80 mx-auto flex flex-col pt-8 pb-4 px-10 rounded-md '>
           <form className='flex flex-col gap-y-4 text-white'
             onSubmit={
               (e) => e.preventDefault()
             }>
-            <h2 className='text-3xl font-bold mb-2'>
+            <h2 className='text-2xl font-bold mb-2'>
               {isSigninForm ? 'Sign In' : 'Sign Up' }
             </h2>
             {
               !isSigninForm &&
               (<input ref={userName}
-                className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-4 text-md rounded-md outline-none'
+                className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-[12px] text-md rounded-md outline-none'
                 type='text'
                 placeholder='Username'
               />
               )
             }
             <input ref={email}
-              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-4 text-md rounded-md outline-none'
+              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-[12px] text-md rounded-md outline-none'
               type='text'
               placeholder='Email or mobile number'
             />
@@ -133,7 +134,7 @@ const Login = () => {
               isValidate.email && (<p className='text-red-500'>{isValidate.email}</p>)
             }
             <input ref={password}
-              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-4 text-md rounded-md outline-none'
+              className='bg-black bg-opacity-25 border border-white placeholder:text-[15px] placeholder-slate-300 p-[12px] text-md rounded-md outline-none'
               type='password'
               placeholder='Password' />
             {/* If the value is true then only it executes */}
@@ -151,9 +152,6 @@ const Login = () => {
           {isSigninForm && (
             <div className='flex flex-col gap-y-3'>
               <span className='hover:underline hover:text-gray-300 text-center cursor-pointer mt-4'>Forgot Password?</span>
-              <div className='flex'>
-                <input className='mr-2 border-none cursor-pointer' type='checkbox' /><span className='text-md'>Remember me</span><br />
-              </div>
             </div>
           )
           }

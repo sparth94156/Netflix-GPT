@@ -7,13 +7,15 @@ const MovieCategory = ({ title, movies }) => {
     return (
         <div className='mb-5'>
             <div>
-                <h2 className="text-white text-xl font-semibold my-3">{title}</h2>
+                <h2 className="text-white text-lg md:text-xl font-semibold my-3">{title}</h2>
             </div>
             {/* I have installed an external plugin to hide the scrollbar */}
             <div className='flex overflow-x-scroll scrollbar-hide'>
                 <div className='flex gap-x-3'>
                     {
-                        movies.map(movie => (<MovieCard key={movie.id} posterPath={movie.poster_path} />)
+                        movies.map(movie => (
+                        <MovieCard key={movie.id} posterPath={movie.poster_path} />
+                    )
                         )
                     }
                 </div>
