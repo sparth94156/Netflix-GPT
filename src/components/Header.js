@@ -63,7 +63,7 @@ const Header = () => {
   }
 
   return (
-    <div className=' w-full absolute py-1 px-8 bg-gradient-to-b from-black z-20 md:flex md:justify-between '>
+    <div className=' w-full absolute py-1 px-8 bg-gradient-to-b from-black z-20 md:flex md:justify-between'>
       <img className='w-[120px] mx-auto md:ml-8 cursor-pointer' src={LOGO} alt='logo' />
       {
         user &&

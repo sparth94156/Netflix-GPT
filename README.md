@@ -52,6 +52,8 @@
     - Implement Memoization in our app
     - Added .env file and put it in .gitignore to secure my secret API keys
     - Made the app responsive
+    - Added MovieInfo component to see the movie details of the movie you clicked
+    - Deployed the app on the internet (Used Netlify)
 
 - Browse (after authentication)
     - Header
@@ -65,5 +67,3 @@
 - Netflix GPT
     - Search bar
     - Movie suggestions
-
-     

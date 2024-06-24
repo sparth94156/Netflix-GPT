@@ -1,4 +1,5 @@
 import MovieCard from './MovieCard';
+import { Link } from 'react-router-dom';
 
 const MovieCategory = ({ title, movies }) => {
 
@@ -14,8 +15,12 @@ const MovieCategory = ({ title, movies }) => {
                 <div className='flex gap-x-3'>
                     {
                         movies.map(movie => (
-                        <MovieCard key={movie.id} posterPath={movie.poster_path} />
-                    )
+                            <Link 
+                            to={'/browse/' + movie.id}
+                            key={movie.id}>
+                                <MovieCard key={movie.id} posterPath={movie.poster_path} />
+                            </Link>
+                        )
                         )
                     }
                 </div>

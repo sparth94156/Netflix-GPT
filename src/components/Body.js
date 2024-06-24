@@ -1,9 +1,11 @@
 import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, useParams } from 'react-router-dom'
 import Login from './Login'
 import Browse from './Browse'
 import { RouterProvider } from 'react-router-dom'
 import Error from './Error'
+import MovieInfo from './MovieInfo'
+import { useSelector } from 'react-redux'
 
 
 const Body = () => {
@@ -22,7 +24,10 @@ const Body = () => {
               path: '/login',
               element: <Login/>
             },
-            
+            {
+              path: '/browse/:movieId',
+              element: <MovieInfo/>
+            }
             
     ])
   
