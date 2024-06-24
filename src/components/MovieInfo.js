@@ -14,12 +14,12 @@ const MovieInfo = () => {
   const { original_title, overview, poster_path,release_date,genres } = movieDetails
 
   return (
-    <div>
+    <div className='fixed'>
       <h2 className='text-4xl text-white absolute mt-20 bg-black bg-opacity-60 p-3 ml-4'>{original_title}</h2>
       <img src={LOGIN_IMG_URL}
         className='h-screen object-cover md:h-full '
         alt='background' />
-      <div className='text-lg text-white bg-black bg-opacity-65 flex -mt-[500px] p-3 gap-x-10'>
+      <div className='text-lg text-white bg-black bg-opacity-65 flex -mt-[550px] p-3 gap-x-10'>
         <div className='w-[300px]'>
           <img src={IMG_CDN_URL + poster_path}
             alt='movie poster'
