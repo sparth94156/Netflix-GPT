@@ -30,7 +30,10 @@ const MovieInfo = () => {
         <div className=' w-6/12 bg-black bg-opacity-60 p-3 md:p-4 gap-y-3 rounded-md text-sm md:text-lg md:w-full'>
           <h2><span className='text-red-500'>Overview:</span> {overview}</h2>
           <h2><span className='text-red-500'>Released:</span> {release_date}</h2>
-          <h2><span className='text-red-500'>Genre:</span> {genres[0].name}, {genres[1].name}, {genres[2].name}</h2>
+          {
+            genres.name && (<h2><span className='text-red-500'>Genre:</span> {genres[0].name}, {genres[1].name}, {genres[2].name}</h2>)
+
+          }
           <h2><span className='text-red-500'>Rating:</span> {vote_average}</h2>
 
           <br/>
