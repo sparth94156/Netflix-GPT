@@ -51,9 +51,9 @@
     - Reused the MovieCategory component in the MovieSuggestion component for showing the movie result of searched query. 
     - Implement Memoization in our app
     - Added .env file and put it in .gitignore to secure my secret API keys
-    - Made the app responsive
     - Added MovieInfo component to see the movie details of the movie you clicked
-    - Deployed the app on the internet (Used Netlify)
+    - Made the app responsive
+    - Deployed the app  (Used Netlify)
 
 - Browse (after authentication)
     - Header
